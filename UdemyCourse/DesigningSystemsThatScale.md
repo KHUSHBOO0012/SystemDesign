@@ -76,8 +76,12 @@ Sharded databased are sometimes called NoSQL.
 - Most NoSQL DB actually do support most SQL operations and use SQL as their API.
 - Works best with simple key/value lookups.
 - A formal schema may not be needed.
-- Examples- Mongodb, DynamoDB, Cassandra, HBase
+- Examples- Mongodb, DynamoDB, Cassandra, HBase(Hadoop)
 
+### Denormalizing
+
+**Normalized data**: Less storage space, more lookups, updates in one place.
+**Denormalized data**: More storage place, one lookup, updates are hard.
 
 
 
