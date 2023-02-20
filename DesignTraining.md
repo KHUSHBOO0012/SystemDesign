@@ -1,4 +1,5 @@
-This is notes from design pattern traning by Krishna Mohan Koyya. 
+This is notes from design pattern traning by Krishna Mohan Koyya.  
+Important Link: https://microservices.io/
 
 ## Story of Architecture
 #### Monoliths
@@ -116,6 +117,17 @@ Not all DB support transaction.
 ## CQRS
 - Command and query responsibility segregation over DB. 
 
+## Transactional Outbox 
+- As single transaction, you update DB as actual record and queuing to fire an event. 
+- Sending duplicate event not a problem as channel would de-dup.
+
+## Event Sourcing 
+- When event occurs, as handler you will receive event.
+- Keep on piling the event like to-do list. 
+- Event Sourcing is a pattern for storing data as events in an append-only log.
+
+## API Composition
+- When data need to be fetched from multiple services. 
+- make query to one service and the other, do composition and return
 
 
- 
