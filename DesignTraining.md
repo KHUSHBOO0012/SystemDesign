@@ -131,16 +131,16 @@ Not all DB support transaction.
 - make query to one service and the other, do composition and return
 
 
-# Patterns for Concurrent Systems -
+# Patterns for Concurrent Systems
 
 These clocks are related to Distributed DB.  
-You want to maintain order among node where transaction took place.
-## Hybrid Clock
-- 
+You want to maintain order among node where transaction took place(known as partial order) to trace back the event.  
 
-## Lamport Clock 
+## Lamport Clock(Logical Clock)
+- to determine the order of events occurring.
 - N1, N2, N3 all will have its own clock, that starts with something say 0.
 - Whenver you are sending a request, you increment the clock.
 - Whenever you receive a request, you synchronise the clock by finding `max(its own clock, what it recieve)`.
-
-- 
+ 
+## Hybrid Clock
+- Clock value as well as machine time
