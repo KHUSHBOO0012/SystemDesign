@@ -40,8 +40,7 @@
 
 ## Prime Factors for Modern Architecture
 Scalability: You should be able to handle more request with increase in hardware. 
-Vertical and Horizontal Scaling
-Scaling out 
+Vertical, Horizontal Scaling
 
 Resilience: What happens in service go down. Somehow it should repair itself, 
 Like multiple instances of the service.
@@ -71,14 +70,44 @@ DB number increase and Management cost increases
 **Shared DB**:
 Management easy
 
-**2-Phase Commit** in case of multiple DB operation as part of single transaction, 
+**2-Phase Commit** in case of multiple DB, operation as part of single transaction, 
 Start transaction, do operation and commit transaction
 
+In memory transaction, followed by commit or rollback.
 Not all DB support transaction.
 
 ## SAGA
 
-long running transaction
-Update db, Reserve 
+- Series of local transaction, typically done in micro-services (in case could not implement as 2 phase commit)
+- Update db, Reserve inventory, Wallet DB update, confirm order
+- Compensatory transaction: Upon orchestration failure, add reserved product back, second transaction happened as different commit. 
+- Eventual consistency
+
+2 ways of implementing SAGA pattern when DB is per service:  
+
+**Orchestration**: for large number of micro-services and is preferred one.
+- Orchestrator talks to different services. 
+- In case of failure, does compensatory transaction and fail order
+<img width="344" alt="image" src="https://user-images.githubusercontent.com/32810320/220068841-38902c11-6b0a-4644-a7d3-a279e5df7611.png">
+
+
+**Choreography**: for 2-3 micros-services
+
+<img width="363" alt="image" src="https://user-images.githubusercontent.com/32810320/220068787-722a04f3-d7ce-47b3-bf58-8f23c038ea4f.png">
+
+## Event Driven Approach(Asynchronous)
+- Calls not directly using HTTP, rather dealing with event.  
+- Requester fires event and responser too fires event when done with request
+- Saga command channel for order and orchestrator. 
+- In starting order in pending state, and system work on that order with help of orchestrator.
+- Depending on saga.results, order status is updated.
+<img width="1199" alt="image" src="https://user-images.githubusercontent.com/32810320/220069327-30fabfc3-8bf1-4783-b510-0a05c8f647e5.png">
+
+
+
+
+
+
+
 
  
