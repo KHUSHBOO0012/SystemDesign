@@ -42,7 +42,7 @@
 Scalability: You should be able to handle more request with increase in hardware. 
 Vertical, Horizontal Scaling
 
-Resilience: What happens in service go down. Somehow it should repair itself, 
+Resilience: What happens if service go down. Somehow it should repair itself, 
 Like multiple instances of the service.
 
 Stability:
@@ -87,7 +87,7 @@ Not all DB support transaction.
 
 **Orchestration**: for large number of micro-services and is preferred one.
 - Orchestrator talks to different services. 
-- In case of failure, does compensatory transaction and fail order
+- In case of failure, does compensatory transaction and fail order.
 <img width="344" alt="image" src="https://user-images.githubusercontent.com/32810320/220068841-38902c11-6b0a-4644-a7d3-a279e5df7611.png">
 
 
@@ -101,9 +101,13 @@ Not all DB support transaction.
 - Saga command channel for order and orchestrator. 
 - In starting order in pending state, and system work on that order with help of orchestrator.
 - Depending on saga.results, order status is updated.
+- Saga DB used to recover orchestrator instance in case it is down
+- Ex: Axon
 <img width="1199" alt="image" src="https://user-images.githubusercontent.com/32810320/220069327-30fabfc3-8bf1-4783-b510-0a05c8f647e5.png">
 
-
+## Domain Event
+- Message: command(to do something, debit money, release product)
+- Event: something already happened that no body can change(debited money)
 
 
 
