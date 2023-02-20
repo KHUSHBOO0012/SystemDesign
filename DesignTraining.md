@@ -1,3 +1,5 @@
+This is notes from design pattern traning by Krishna Mohan Koyya. 
+
 ## Story of Architecture
 #### Monoliths
 -	Developed and deployed as one piece.
@@ -109,8 +111,8 @@ Not all DB support transaction.
 - Message: command(to do something, debit money, release product)
 - Event: something already happened that no body can change(debited money)
 
-
-
+## CQRS
+- Command and query responsibility segregation over DB. 
 
 
 
