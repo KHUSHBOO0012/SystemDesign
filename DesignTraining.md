@@ -66,6 +66,8 @@ Wallet Service: PUT for debit and that would handle insufficient balance etc.
 Order Service: POST, PUT (in case order failed to update status) and GET for order
 Product Service: PUT for reserve and release. 
 
+# Data Management Patterns 
+
 **DB per service**: 
 DB number increase and Management cost increases
 
