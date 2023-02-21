@@ -250,4 +250,24 @@ Variable timing: To avoid sender blocked in case server is busy with request.
 
 <img width="1130" alt="image" src="https://user-images.githubusercontent.com/32810320/220295362-c2e92317-0b30-47df-b23c-9f8284f22fb7.png">
 
+<img width="944" alt="image" src="https://user-images.githubusercontent.com/32810320/220296963-3b983cec-6db6-410d-95ce-a33fcf0f028f.png">
+
+<img width="1071" alt="image" src="https://user-images.githubusercontent.com/32810320/220297002-0bc1d871-7268-4e4d-846b-796340e6b155.png">
+
+<img width="1175" alt="image" src="https://user-images.githubusercontent.com/32810320/220297050-4c288ab8-3aea-4042-b7f2-671360a40cf9.png">
+
+<img width="982" alt="image" src="https://user-images.githubusercontent.com/32810320/220297107-6aa267ac-4c31-412d-a2e5-185718999332.png">
+
+Scatter gather 2 way, msg broker one way
+
+<img width="1043" alt="image" src="https://user-images.githubusercontent.com/32810320/220297305-6d352b28-0fa2-4621-9375-86eaf78bf5e7.png">
+
+<img width="1068" alt="image" src="https://user-images.githubusercontent.com/32810320/220298327-8c366d3d-44ee-4e4a-9224-1939b75a0331.png">
+
+<img width="1121" alt="image" src="https://user-images.githubusercontent.com/32810320/220299658-2141334c-7383-4de9-abc7-71324ab146e7.png">
+
+<img width="594" alt="image" src="https://user-images.githubusercontent.com/32810320/220300093-fbb83cd5-823b-4c96-bb71-4a007be87f19.png">
+
+
+
 
