@@ -165,28 +165,24 @@ X. Dev/prod parity: Keep development, staging, and production as similar as poss
 XI. Logs: Treat logs as event streams.  
 XII. Admin processes: Run admin/management tasks as one-off processes.  
 
-## Service per Host/VM/Container 
+## Service per Host 
 <img width="159" alt="image" src="https://user-images.githubusercontent.com/32810320/220248841-6205c3a2-55a1-4dd4-a40e-8aa093a3d1c9.png">
-Service per host 
 
+## Service per VM 
 <img width="287" alt="image" src="https://user-images.githubusercontent.com/32810320/220248929-004e7a71-f3e1-4777-9384-2b6d3d5887e1.png">
-Service per VM
 
+## Service per Container 
 <img width="290" alt="image" src="https://user-images.githubusercontent.com/32810320/220249789-c5cc14dc-f2e9-44e5-b7e1-dcbdf9afa5ea.png">
-Service per container
 
 ## Gateway
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/32810320/220250750-cbb73f6c-60c8-4407-aa3b-1967b811b8c1.png">
-Gateway
 
 ## Registry
 <img width="575" alt="image" src="https://user-images.githubusercontent.com/32810320/220253430-a61e7c60-7d6f-4cac-9aff-3f0ed96d043a.png">
-Registry
 Here locator helps gateway with registry info.
 
 ## Chassis
 Infrastructure which consists of some pattern like below
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/32810320/220255459-2a6c41e4-8dab-4f05-8649-9ab56916b08a.png">
-Chassis
 
 
