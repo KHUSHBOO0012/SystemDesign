@@ -136,22 +136,6 @@ Not all DB support transaction.
 - make query to one service and the other, do composition and return
 
 
-# Patterns for Concurrent Systems
-
-These clocks are related to Distributed DB.  
-to trace back the event.  
-
-## Lamport Clock(Logical Clock)
-- establishes partial order among node particular to a transaction agnostic to the local time.
-- to determine the order of events occurring.
-- N1, N2, N3 all will have its own clock, that starts with something say 0.
-- Whenver you are sending a request, you increment the clock.
-- Whenever you receive a request, you synchronise the clock by finding `max(its own clock, what it recieve)`.
- 
-## Hybrid Clock
-- Clock value as well as machine time
-
-
 # Patterns for Microservices
 
 ## Twelve Factor: https://12factor.net/.   
@@ -211,23 +195,6 @@ Node have Pod, pod contains container. Pod is like machine, they have their addr
 if between micro-services
 - upstream
 
-## Apache Kafka
-https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/
-
-## Scatter-Gather
-- For Map Reduce
-
-## Leader-follower
-- In Raft, Kafka
-- Follower follow leader
-<img width="394" alt="image" src="https://user-images.githubusercontent.com/32810320/220272454-09290f47-76cc-4839-9494-432675518207.png">
-
-## Master-slave
-- Master - accepts request and schedule on slave. 
-
-<img width="382" alt="image" src="https://user-images.githubusercontent.com/32810320/220271447-c06d9ba2-e165-47dc-95e9-d687b03620a6.png">
-
-
 # Patterns for Messaging
 
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/32810320/220291891-bc58274f-06aa-4be8-a482-d517dc2adb05.png">
@@ -267,6 +234,54 @@ Scatter gather 2 way, msg broker one way
 <img width="1121" alt="image" src="https://user-images.githubusercontent.com/32810320/220299658-2141334c-7383-4de9-abc7-71324ab146e7.png">
 
 <img width="594" alt="image" src="https://user-images.githubusercontent.com/32810320/220300093-fbb83cd5-823b-4c96-bb71-4a007be87f19.png">
+
+# Patterns for Distributed Systems
+
+## Apache Kafka
+https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/
+
+## Scatter-Gather
+- For Map Reduce
+
+## Leader-follower
+- In Raft, Kafka
+- Follower follow leader
+
+<img width="394" alt="image" src="https://user-images.githubusercontent.com/32810320/220272454-09290f47-76cc-4839-9494-432675518207.png">
+
+## Master-slave
+- Master - accepts request and schedule on slave. 
+
+<img width="382" alt="image" src="https://user-images.githubusercontent.com/32810320/220271447-c06d9ba2-e165-47dc-95e9-d687b03620a6.png">
+
+
+
+# Patterns for Concurrent Systems
+
+## Active Object
+
+Provide Synchronous interface to client to accomplish task asynchronously.
+
+**ACT**: Async Completion Token. Populated by thread which is executing the task. In node js: called promise, In other language: future
+
+<img width="725" alt="image" src="https://user-images.githubusercontent.com/32810320/220312880-571a8324-18ff-468f-a6df-a327314c9661.png">
+
+## Thread Pool
+- Multiple threads to accomplish task quickly.
+
+## Monitor Object
+
+
+## Lamport Clock(Logical Clock)
+- related to distributed DB
+- establishes partial order among node particular to a transaction agnostic to the local time.
+- to determine the order of events occurring.
+- N1, N2, N3 all will have its own clock, that starts with something say 0.
+- Whenver you are sending a request, you increment the clock.
+- Whenever you receive a request, you synchronise the clock by finding `max(its own clock, what it recieve)`.
+ 
+## Hybrid Clock
+- Clock value as well as machine time
 
 
 
