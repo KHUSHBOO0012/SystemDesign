@@ -209,3 +209,20 @@ Node have Pod, pod contains container. Pod is like machine, they have their addr
 if between micro-services
 - upstream
 
+## Apache Kafka
+https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/
+
+## Scatter-Gather
+- For Map Reduce
+
+## Leader-follower
+- In Raft, Kafka
+- Follower follow leader
+<img width="394" alt="image" src="https://user-images.githubusercontent.com/32810320/220272454-09290f47-76cc-4839-9494-432675518207.png">
+
+## Master-slave
+- Master - accepts request and schedule on slave. 
+
+<img width="382" alt="image" src="https://user-images.githubusercontent.com/32810320/220271447-c06d9ba2-e165-47dc-95e9-d687b03620a6.png">
+
+
