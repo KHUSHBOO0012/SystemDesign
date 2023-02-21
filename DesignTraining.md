@@ -182,7 +182,23 @@ XII. Admin processes: Run admin/management tasks as one-off processes.
 Here locator helps gateway with registry info.
 
 ## Chassis
-Infrastructure which consists of some pattern like below
+Infrastructure which consists of some pattern like below. 
+
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/32810320/220255459-2a6c41e4-8dab-4f05-8649-9ab56916b08a.png">
 
+Same Correlatin id for a request for all services.
 
+Chassis also equipped with log aggregator, listen to logs from each services, log sent as event and aggregated by aggregator, ex: Splunk, log stash,   
+
+## Strangler 
+
+It is gateway only. Seat before services, required while migrating to micro-services from monolith to direct calls by choosing between monolith and newly created micro-services. once migrated, no longer required.
+
+<img width="309" alt="image" src="https://user-images.githubusercontent.com/32810320/220258698-80df0ea2-0c35-4b55-b641-426b772f7dd9.png">
+
+## Kubernetes
+
+Node have Pod, pod contains container. Pod is like machine, they have their address.  
+
+## Sidecar
+If service can only handle http and now required to handle https too. One sol: micros-service to convert https to http.
