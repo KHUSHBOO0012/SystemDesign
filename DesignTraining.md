@@ -1,5 +1,7 @@
 This is notes from design pattern traning by Krishna Mohan Koyya.  
-Important Link: https://microservices.io/
+Important Link:  
+https://microservices.io/.  
+https://12factor.net/
 
 ## Story of Architecture
 #### Monoliths
@@ -43,16 +45,14 @@ Important Link: https://microservices.io/
 
 ## Prime Factors for Modern Architecture
 Scalability: You should be able to handle more request with increase in hardware. 
-Vertical, Horizontal Scaling
+Vertical- enhance power of machine, Horizontal Scaling- distirbute load on multiple machine
 
-Resilience: What happens if service go down. Somehow it should repair itself, 
+Resilience: What happens if service go down. Somehow it should identify that something is wrong and repair itself. 
 Like multiple instances of the service.
 
-Stability:
-
-Ability to grow:
-
-Service Integration:
+Stability
+Ability to grow  
+Service Integration. 
 
 ## E-commerce Application
 
@@ -96,7 +96,7 @@ Not all DB support transaction.
 <img width="344" alt="image" src="https://user-images.githubusercontent.com/32810320/220068841-38902c11-6b0a-4644-a7d3-a279e5df7611.png">
 
 
-**Choreography**: for 2-3 micros-services
+**Choreography**: for 2-3 micros-services only as it is complex to debug,
 
 <img width="363" alt="image" src="https://user-images.githubusercontent.com/32810320/220068787-722a04f3-d7ce-47b3-bf58-8f23c038ea4f.png">
 
@@ -118,7 +118,8 @@ Not all DB support transaction.
 - Command and query responsibility segregation over DB. 
 
 ## Transactional Outbox 
-- As single transaction, you update DB as actual record and queuing to fire an event. 
+- It uses application server database to add another table outbox where every record is indication that this event need to be published. 
+- As single transaction, you update DB as actual record and outbox table to fire an event. 
 - Sending duplicate event not a problem as channel would de-dup.
 
 ## Event Sourcing 
@@ -127,6 +128,7 @@ Not all DB support transaction.
 - Event Sourcing is a pattern for storing data as events in an append-only log.
 
 ## API Composition
+- opposite of join in case of DB per service,
 - When data need to be fetched from multiple services. 
 - make query to one service and the other, do composition and return
 
@@ -134,9 +136,10 @@ Not all DB support transaction.
 # Patterns for Concurrent Systems
 
 These clocks are related to Distributed DB.  
-You want to maintain order among node where transaction took place(known as partial order) to trace back the event.  
+to trace back the event.  
 
 ## Lamport Clock(Logical Clock)
+- establishes partial order among node particular to a transaction agnostic to the local time.
 - to determine the order of events occurring.
 - N1, N2, N3 all will have its own clock, that starts with something say 0.
 - Whenver you are sending a request, you increment the clock.
@@ -144,3 +147,46 @@ You want to maintain order among node where transaction took place(known as part
  
 ## Hybrid Clock
 - Clock value as well as machine time
+
+
+# Patterns for Microservices
+
+## Twelve Factor: https://12factor.net/.   
+I. Codebase: One codebase tracked in revision control, many deploys.  
+II. Dependencies: Explicitly declare and isolate dependencies.  
+III. Config: Store config in the environment.   
+IV. Backing services: Treat backing services as attached resources.  
+V. Build, release, run: Strictly separate build and run stages.  
+VI. Processes: Execute the app as one or more stateless processes(one request should not depend on last request).  
+VII. Port binding: Export services via port binding.  
+VIII. Concurrency: Scale out via the process model.  
+IX. Disposability: Maximize robustness with fast startup and graceful shutdown.  
+X. Dev/prod parity: Keep development, staging, and production as similar as possible.  
+XI. Logs: Treat logs as event streams.  
+XII. Admin processes: Run admin/management tasks as one-off processes.  
+
+## Service per Host/VM/Container 
+<img width="159" alt="image" src="https://user-images.githubusercontent.com/32810320/220248841-6205c3a2-55a1-4dd4-a40e-8aa093a3d1c9.png">
+Service per host 
+
+<img width="287" alt="image" src="https://user-images.githubusercontent.com/32810320/220248929-004e7a71-f3e1-4777-9384-2b6d3d5887e1.png">
+Service per VM
+
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/32810320/220249789-c5cc14dc-f2e9-44e5-b7e1-dcbdf9afa5ea.png">
+Service per container
+
+## Gateway
+<img width="621" alt="image" src="https://user-images.githubusercontent.com/32810320/220250750-cbb73f6c-60c8-4407-aa3b-1967b811b8c1.png">
+Gateway
+
+## Registry
+<img width="575" alt="image" src="https://user-images.githubusercontent.com/32810320/220253430-a61e7c60-7d6f-4cac-9aff-3f0ed96d043a.png">
+Registry
+Here locator helps gateway with registry info.
+
+## Chassis
+Infrastructure which consists of some pattern like below
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/32810320/220255459-2a6c41e4-8dab-4f05-8649-9ab56916b08a.png">
+Chassis
+
+
