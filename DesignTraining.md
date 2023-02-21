@@ -197,8 +197,14 @@ It is gateway only. Seat before services, required while migrating to micro-serv
 <img width="309" alt="image" src="https://user-images.githubusercontent.com/32810320/220258698-80df0ea2-0c35-4b55-b641-426b772f7dd9.png">
 
 ## Kubernetes
-
 Node have Pod, pod contains container. Pod is like machine, they have their address.  
 
 ## Sidecar
-If service can only handle http and now required to handle https too. One sol: micros-service to convert https to http.
+- pre and post processing like proxy for example: protocol conversion- If service can only handle http and now required to handle https too. One sol: micros-service to convert https to http.
+- client-facing(between client and micro-service)
+- ex: istio gives several side car.
+
+## Ambassador
+if between micro-services
+- upstream
+
