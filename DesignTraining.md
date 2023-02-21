@@ -246,7 +246,8 @@ Variable timing: To avoid sender blocked in case server is busy with request.
 
 <img width="859" alt="image" src="https://user-images.githubusercontent.com/32810320/220294438-0937e04a-dc99-480f-9285-77a04c9b0526.png">
 
+<img width="853" alt="image" src="https://user-images.githubusercontent.com/32810320/220295256-a0ec0116-79bd-479c-bbdf-c8239a655c1f.png">
 
-
+<img width="1130" alt="image" src="https://user-images.githubusercontent.com/32810320/220295362-c2e92317-0b30-47df-b23c-9f8284f22fb7.png">
 
 
