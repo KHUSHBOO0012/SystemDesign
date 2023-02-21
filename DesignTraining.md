@@ -1,3 +1,4 @@
+<img width="746" alt="image" src="https://user-images.githubusercontent.com/32810320/220316074-c9a0a67d-350d-440b-b61b-04061b46ae1f.png">
 This is notes from design pattern traning by Krishna Mohan Koyya.  
 Important Link:  
 https://microservices.io/.  
@@ -254,6 +255,32 @@ https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-s
 
 <img width="382" alt="image" src="https://user-images.githubusercontent.com/32810320/220271447-c06d9ba2-e165-47dc-95e9-d687b03620a6.png">
 
+## Heart-beat
+- leader send heart-beat to follower.
+
+## Generation clock
+- every leader will have it, when new leader is elected, it will increment the clock from what was to previous leader. 
+- when old guy come back, it will have older generation, as ack of heart-beat, it re-transfer the ownership or clock value to older leader(did not listen to the lecturer clearly)
+
+## Zookeeper, Redis
+- for metadata caching for distributed system.
+
+## Quorum
+- 2f + 1 where f is failover count. 3 node will handle 1 failover.
+
+## Lease
+
+## Segmented Log 
+- Split log into multiple smaller files instead of a single large file for easier operations.
+
+## Write-Ahead Log
+- Provide durability guarantee without the storage data structures to be flushed to disk, by persisting every state change as a command to the append only log.
+
+## Replicated Log
+- Keep the state of multiple nodes synchronized by using a write-ahead log that is replicated to all the cluster nodes.
+- https://martinfowler.com/articles/patterns-of-distributed-systems/replicated-log.html
+
+## Sharded Services
 
 
 # Patterns for Concurrent Systems
@@ -264,13 +291,44 @@ Provide Synchronous interface to client to accomplish task asynchronously.
 
 **ACT**: Async Completion Token. Populated by thread which is executing the task. In node js: called promise, In other language: future
 
-<img width="725" alt="image" src="https://user-images.githubusercontent.com/32810320/220312880-571a8324-18ff-468f-a6df-a327314c9661.png">
+<img width="746" alt="image" src="https://user-images.githubusercontent.com/32810320/220316210-c1bc404c-f75f-40f3-af63-643c21b28eac.png">
 
 ## Thread Pool
 - Multiple threads to accomplish task quickly.
 
-## Monitor Object
+## Lock
+- Pessimistic, re-entrant lock etc
 
+## Monitor Object
+- Shuffles lock among different people, and lock allows and disallow multiple people to access critical section.
+- In java, uses `synchronised` keyword for monitor.
+
+## Proctor
+- proactively do something and fire an event.
+- ABC proactively monitor the file and upon reading content fires the event.  
+
+<img width="499" alt="image" src="https://user-images.githubusercontent.com/32810320/220321253-1bf30882-b1be-4a5f-ab25-2bd3d3aa0133.png">
+
+
+## Reactor
+- to do something as reaction to event.  
+- reading file as reaction to event(when data is in file).
+ 
+<img width="448" alt="image" src="https://user-images.githubusercontent.com/32810320/220320067-e138ccf0-834b-43c2-a76a-f43cdd396cfa.png">
+
+## Scheduler
+- On which order task in executor is executed. ex: based on timestamp, priority.
+
+## Thread-Specific Storage
+- Thread local: global variable whose values are local to thread. 
+
+## Acceptor-Connector
+- to establish connection etc 
+- The Acceptor-Connector design pattern decouples the connection and initialization of cooperating peer services in a networked system from the processing performed by the peer services after they are connected and initialized.
+
+## Interceptor
+- for pre and post processing.
+ 
 
 ## Lamport Clock(Logical Clock)
 - related to distributed DB
