@@ -1,8 +1,10 @@
 This is notes from design pattern traning by Krishna Mohan Koyya.  
 Important Link:  
 https://microservices.io/.  
-https://12factor.net/. 
-https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/
+https://12factor.net/.   
+https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/.  
+https://bitbucket.org/glarimy/design/src/master/.  
+
 
 ## Story of Architecture
 #### Monoliths
@@ -224,5 +226,27 @@ https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-s
 - Master - accepts request and schedule on slave. 
 
 <img width="382" alt="image" src="https://user-images.githubusercontent.com/32810320/220271447-c06d9ba2-e165-47dc-95e9-d687b03620a6.png">
+
+
+# Patterns for Messaging
+
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/32810320/220291891-bc58274f-06aa-4be8-a482-d517dc2adb05.png">
+
+<img width="863" alt="image" src="https://user-images.githubusercontent.com/32810320/220292284-5f7795b1-a164-48fa-b06d-0baf6adbaeda.png">
+
+<img width="1062" alt="image" src="https://user-images.githubusercontent.com/32810320/220292593-a2fc0893-74d0-4400-8d49-0ce14b46e188.png">
+
+<img width="811" alt="image" src="https://user-images.githubusercontent.com/32810320/220292846-da406a8a-ae3f-478e-9080-abd250f4c425.png">
+
+Variable timing: To avoid sender blocked in case server is busy with request.  
+
+<img width="853" alt="image" src="https://user-images.githubusercontent.com/32810320/220293329-7a94862d-d280-4353-b206-89c79ff859ac.png">
+
+<img width="1102" alt="image" src="https://user-images.githubusercontent.com/32810320/220293472-fec42728-802f-4208-bcf6-bbd07066273c.png">
+
+<img width="859" alt="image" src="https://user-images.githubusercontent.com/32810320/220294438-0937e04a-dc99-480f-9285-77a04c9b0526.png">
+
+
+
 
 
