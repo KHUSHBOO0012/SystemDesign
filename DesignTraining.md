@@ -1,7 +1,8 @@
 This is notes from design pattern traning by Krishna Mohan Koyya.  
 Important Link:  
 https://microservices.io/.  
-https://12factor.net/
+https://12factor.net/. 
+https://www.opensourceforu.com/2021/11/apache-kafka-asynchronous-messaging-for-seamless-systems/
 
 ## Story of Architecture
 #### Monoliths
