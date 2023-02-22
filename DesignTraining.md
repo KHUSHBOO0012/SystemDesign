@@ -1,4 +1,3 @@
-<img width="746" alt="image" src="https://user-images.githubusercontent.com/32810320/220316074-c9a0a67d-350d-440b-b61b-04061b46ae1f.png">
 This is notes from design pattern traning by Krishna Mohan Koyya.  
 Important Link:  
 https://microservices.io/.  
